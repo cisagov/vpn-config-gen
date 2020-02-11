@@ -2,6 +2,10 @@
 
 """Update the routes of an OpenVPN configuration.
 
+There are certian internet services that filter access based on egress.
+This tool will update the routes of an OpenVPN configuration file to include
+the latest routes for those IP addresses.
+
 Usage:
   vpnconf [--log-level=LEVEL] [--in-place] <filename>
   vpnconf (-h | --help)
