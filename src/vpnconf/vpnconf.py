@@ -39,18 +39,6 @@ def make_json_request(url):
     return r.json()
 
 
-def get_latest_versions(guid, instance_name):
-    """Get the latest versions of each service instance."""
-    json = make_json_request(
-        f"https://endpoints.office.com/version?clientrequestid={guid}"
-    )
-    for d in json:
-        if d["instance"] == instance_name:
-            return d["latest"]
-    else:
-        return None
-
-
 def get_endpoints(guid, instance_name):
     """Gather endpoints from office API."""
     ip_set = netaddr.IPSet()
@@ -120,7 +108,6 @@ def main():
     lines = read_config_no_routes(args["<filename>"])
 
     guid = uuid.uuid1()
-    # version = get_latest_versions(guid, INSTANCE)
     ip_set = get_endpoints(guid, INSTANCE)
 
     # add our static routes
