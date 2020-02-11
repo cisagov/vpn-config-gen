@@ -6,13 +6,23 @@
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/vpn-config-gen.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/vpn-config-gen/context:python)
 [![Known Vulnerabilities](https://snyk.io/test/github/cisagov/vpn-config-gen/develop/badge.svg)](https://snyk.io/test/github/cisagov/vpn-config-gen)
 
-This is a generic skeleton project that can be used to quickly get a
-new [cisagov](https://github.com/cisagov) Python library GitHub
-project started.  This skeleton project contains [licensing
-information](LICENSE), as well as
-[pre-commit hooks](https://pre-commit.com) and
-[GitHub Actions](https://github.com/features/actions) configurations
-appropriate for a Python library project.
+```Update the routes of an OpenVPN configuration.
+
+There are certian internet services that filter access based on egress.
+This tool will update the routes of an OpenVPN configuration file to include
+the latest routes for those IP addresses.
+
+Usage:
+  vpnconf [--log-level=LEVEL] [--in-place] <filename>
+  vpnconf (-h | --help)
+
+Options:
+  -h --help              Show this message.
+  -i --in-place          Update file in place.
+  --log-level=LEVEL      If specified, then the log level will be set to
+                         the specified value.  Valid values are "debug", "info",
+                         "warning", "error", and "critical". [default: warning]
+```
 
 ## Contributing ##
 
