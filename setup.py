@@ -1,5 +1,5 @@
 """
-This is the setup module for the example project.
+This is the setup module for the vpnconf project.
 
 Based on:
 
@@ -31,10 +31,10 @@ def package_vars(version_file):
 
 
 setup(
-    name="example",
+    name="vpnconf",
     # Versions should comply with PEP440
-    version=package_vars("src/example/_version.py")["__version__"],
-    description="Example python library",
+    version=package_vars("src/vpnconf/_version.py")["__version__"],
+    description="vpnconf python library",
     long_description=readme(),
     long_description_content_type="text/markdown",
     # NCATS "homepage"
@@ -61,15 +61,15 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
     ],
     # What does your project relate to?
     keywords="skeleton",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    package_data={"example": ["data/*.txt"]},
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
     include_package_data=True,
-    install_requires=["docopt", "setuptools"],
+    install_requires=["docopt", "netaddr", "setuptools", "tqdm"],
     extras_require={
         "test": [
             "pre-commit",
@@ -82,6 +82,6 @@ setup(
             "pytest",
         ]
     },
-    # Conveniently allows one to run the CLI tool as `example`
-    entry_points={"console_scripts": ["example = example.example:main"]},
+    # Conveniently allows one to run the CLI tool as `vpnconf`
+    entry_points={"console_scripts": ["vpnconf = vpnconf.vpnconf:main"]},
 )
