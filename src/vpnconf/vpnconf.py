@@ -27,6 +27,7 @@ import uuid
 import docopt
 import netaddr
 import requests
+from schema import And, Schema, SchemaError, Use
 from tqdm import tqdm
 
 from ._version import __version__
@@ -96,20 +97,37 @@ def write_config(lines, filename):
 def main():
     """Set up logging and call the vpnconf function."""
     args = docopt.docopt(__doc__, version=__version__)
-    # Set up logging
-    log_level = args["--log-level"]
+    # Validate and convert arguments as needed
+    schema = Schema(
+        {
+            "--log-level": And(
+                str,
+                Use(str.lower),
+                lambda n: n in ("debug", "info", "warning", "error", "critical"),
+                error="Possible values for --log-level are "
+                + "debug, info, warning, error, and critical.",
+            ),
+            str: object,  # Don't care about other keys, if any
+        }
+    )
+
     try:
-        logging.basicConfig(
-            format="%(asctime)-15s %(levelname)s %(message)s", level=log_level.upper()
-        )
-    except ValueError:
-        logging.critical(
-            f'"{log_level}" is not a valid logging level.  Possible values '
-            "are debug, info, warning, and error."
-        )
+        args = schema.validate(args)
+    except SchemaError as err:
+        # Exit because one or more of the arguments were invalid
+        print(err, file=sys.stderr)
         return 1
 
-    lines = read_config_no_routes(args["<filename>"])
+    # Assign validated arguments to variables
+    filename = args["<filename>"]
+    log_level = args["--log-level"]
+
+    # Set up logging
+    logging.basicConfig(
+        format="%(asctime)-15s %(levelname)s %(message)s", level=log_level.upper()
+    )
+
+    lines = read_config_no_routes(filename)
 
     guid = uuid.uuid1()
     ip_set = get_endpoints(guid, INSTANCE)

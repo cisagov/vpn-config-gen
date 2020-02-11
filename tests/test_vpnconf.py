@@ -19,7 +19,6 @@ log_levels = (
     "warning",
     "error",
     "critical",
-    pytest.param("critical2", marks=pytest.mark.xfail),
 )
 
 # define sources of version strings
