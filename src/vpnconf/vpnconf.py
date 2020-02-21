@@ -33,7 +33,7 @@ from tqdm import tqdm
 from ._version import __version__
 
 INSTANCE = "Worldwide"
-STATIC_ROUTES = [netaddr.IPNetwork("172.20.0.0/24")]  # CAL
+STATIC_ROUTES = [netaddr.IPNetwork("172.20.0.0/16")]  # CAL
 
 
 def make_json_request(url):
