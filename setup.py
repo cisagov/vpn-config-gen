@@ -70,7 +70,14 @@ setup(
     package_dir={"": "src"},
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
     include_package_data=True,
-    install_requires=["docopt", "netaddr", "setuptools >= 24.2.0", "schema", "tqdm"],
+    install_requires=[
+        "docopt",
+        "netaddr",
+        "requests",
+        "setuptools >= 24.2.0",
+        "schema",
+        "tqdm",
+    ],
     extras_require={
         "test": [
             "pre-commit",
