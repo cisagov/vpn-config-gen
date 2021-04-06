@@ -6,9 +6,10 @@
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/vpn-config-gen.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/vpn-config-gen/context:python)
 [![Known Vulnerabilities](https://snyk.io/test/github/cisagov/vpn-config-gen/develop/badge.svg)](https://snyk.io/test/github/cisagov/vpn-config-gen)
 
-```Update the routes of an OpenVPN configuration.
+```console
+Update the routes of an OpenVPN configuration.
 
-There are certian internet services that filter access based on egress.
+There are certain internet services that filter access based on egress.
 This tool will update the routes of an OpenVPN configuration file to include
 the latest routes for those IP addresses.
 
@@ -26,7 +27,7 @@ Options:
 
 ## Contributing ##
 
-We welcome contributions!  Please see [here](CONTRIBUTING.md) for
+We welcome contributions!  Please see [`CONTRIBUTING.md`](CONTRIBUTING.md) for
 details.
 
 ## License ##
