@@ -114,7 +114,7 @@ def main():
     except SchemaError as err:
         # Exit because one or more of the arguments were invalid
         print(err, file=sys.stderr)
-        return 1
+        sys.exit(1)
 
     # Assign validated arguments to variables
     filename = args["<filename>"]
@@ -142,4 +142,3 @@ def main():
 
     # Stop logging and clean up
     logging.shutdown()
-    return 0
