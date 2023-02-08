@@ -75,7 +75,7 @@ def read_config_no_routes(filename):
     if filename == "-":
         f = sys.stdin
     else:
-        f = open(filename, "r")
+        f = open(filename)
     for line in f.readlines():
         if line.startswith("route ") or line.startswith("route-ipv6 "):
             continue
