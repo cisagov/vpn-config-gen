@@ -200,6 +200,7 @@ repos:
   # Docker hooks
   - repo: https://github.com/IamTheFij/docker-pre-commit
     rev: v3.0.1
+    rev: v3.0.1
     hooks:
       - id: docker-compose-check
 
