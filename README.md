@@ -13,12 +13,15 @@ This tool will update the routes of an OpenVPN configuration file to include
 the latest routes for those IP addresses.
 
 Usage:
-  vpnconf [--log-level=LEVEL] [--in-place] <filename>
+  vpnconf [--log-level=LEVEL] [--in-place] [--no-ipv4 | --no-ipv6] [-e FILES...] <filename>
   vpnconf (-h | --help)
 
 Options:
   -h --help              Show this message.
+  -e FILES --extra-routes=FILES   Additional files containing hostnames or CIDRs.
   -i --in-place          Update file in place.
+  --no-ipv4              Exclude IPv4 addresses from the output.
+  --no-ipv6              Exclude IPv6 addresses from the output.
   --log-level=LEVEL      If specified, then the log level will be set to
                          the specified value.  Valid values are "debug", "info",
                          "warning", "error", and "critical". [default: warning]
