@@ -32,11 +32,13 @@ from ._version import __version__
 
 INSTANCE = "Worldwide"
 STATIC_ROUTES = [netaddr.IPNetwork("172.20.0.0/16")]  # CAL
+# Time in seconds for requests to await a response before timing out
+TIMEOUT = 5
 
 
 def make_json_request(url):
     """Make a json request and handle status codes."""
-    r = requests.get(url)
+    r = requests.get(url, timeout=TIMEOUT)
     if r.status_code != 200:
         raise Exception(f"Bad request status_code: {r.status_code}")
     return r.json()
