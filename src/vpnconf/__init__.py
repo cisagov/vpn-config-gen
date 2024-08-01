@@ -1,4 +1,5 @@
 """The vpnconf library."""
+
 from . import vpnconf
 from ._version import __version__  # noqa: F401
 
