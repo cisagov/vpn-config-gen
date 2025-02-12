@@ -1,4 +1,3 @@
-#!/usr/bin/env pytest -vs
 """Tests for vpnconf."""
 
 # Standard Python Libraries
