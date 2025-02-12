@@ -106,6 +106,7 @@ setup(
         # checking between environments.
         "dev": [
             "types-docopt",
+            "types-netaddr",
             "types-requests",
             "types-setuptools",
             "types-tqdm",

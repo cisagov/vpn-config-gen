@@ -162,6 +162,7 @@ repos:
         # checking between environments.
         additional_dependencies:
           - types-docopt
+          - types-netaddr
           - types-requests
           - types-setuptools
           - types-tqdm
