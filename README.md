@@ -1,8 +1,10 @@
 # vpn-config-gen #
 
 [![GitHub Build Status](https://github.com/cisagov/vpn-config-gen/workflows/build/badge.svg)](https://github.com/cisagov/vpn-config-gen/actions)
+[![License](https://img.shields.io/github/license/cisagov/vpn-config-gen)](https://spdx.org/licenses/)
 [![CodeQL](https://github.com/cisagov/vpn-config-gen/workflows/CodeQL/badge.svg)](https://github.com/cisagov/vpn-config-gen/actions/workflows/codeql-analysis.yml)
 [![Coverage Status](https://coveralls.io/repos/github/cisagov/vpn-config-gen/badge.svg?branch=develop)](https://coveralls.io/github/cisagov/vpn-config-gen?branch=develop)
+[![Code Style](https://img.shields.io/badge/Code%20Style-black-black)](https://github.com/psf/black)
 
 ```console
 Update the routes of an OpenVPN configuration.
