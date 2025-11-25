@@ -175,7 +175,6 @@ repos:
           - types-docopt
           - types-netaddr
           - types-requests
-          - types-setuptools
           - types-tqdm
   - repo: https://github.com/pypa/pip-audit
     rev: v2.9.0
